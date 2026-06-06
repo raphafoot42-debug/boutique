@@ -15,7 +15,7 @@ export const products: Product[] = [
     name: 'NexaWear T-shirt',
     description: 'T-shirt de qualité premium, coupe moderne. Disponible en plusieurs tailles.',
     price: 1999,
-    image: 'https://i.imgur.com/9fKln7N.jpg',
+    image: 'https://i.imgur.com/yqKrydq.jpg',
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     stripePriceId: 'price_1TebF7LyTbnMrw2ZcIhO4CBe',
     colors: ['Noir', 'Blanc'],
