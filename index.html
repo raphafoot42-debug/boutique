@@ -347,11 +347,11 @@
 
     <div class="actions">
       <div class="tg-button" onclick="openPopup('canal')">
-        <div class="label">Mon canal Telegram</div>
+        <div class="label">Mon canal WhatsApp</div>
         <div class="sublabel">Viens suivre mes petites folies ✨</div>
       </div>
       <div class="tg-button" onclick="openPopup('perso')">
-        <div class="label">Mon Telegram perso</div>
+        <div class="label">Mon WhatsApp perso</div>
         <div class="sublabel">Présente-toi, surprends-moi...</div>
       </div>
     </div>
@@ -364,14 +364,14 @@
 <!-- Popup Canal -->
 <div class="popup-overlay" id="popup-canal" onclick="closePopup('canal')">
   <div class="popup-card" onclick="event.stopPropagation()">
-    <div class="popup-title">Mon canal Telegram 📣</div>
+    <div class="popup-title">Mon canal WhatsApp 📣</div>
 
-    <a href="https://t.me/canalJuliette" target="_blank" rel="noopener" class="join-btn">
+    <a href="https://chat.whatsapp.com/ITyXIxI5RpFEfFu3VF8WdE?s=cl&p=i&mlu=0" target="_blank" rel="noopener" class="join-btn">
       Rejoindre le canal →
     </a>
 
     <div class="link-box">
-      <a href="https://t.me/canalJuliette" target="_blank" rel="noopener">t.me/canalJuliette</a>
+      <a href="https://chat.whatsapp.com/ITyXIxI5RpFEfFu3VF8WdE?s=cl&p=i&mlu=0" target="_blank" rel="noopener">chat.whatsapp.com/ITyXIxI5RpFEfFu3VF8WdE</a>
     </div>
 
     <button class="popup-close" onclick="closePopup('canal')">Fermer</button>
@@ -381,12 +381,12 @@
 <!-- Popup Perso -->
 <div class="popup-overlay" id="popup-perso" onclick="closePopup('perso')">
   <div class="popup-card" onclick="event.stopPropagation()">
-    <div class="popup-title">Mon Telegram perso 💌</div>
+    <div class="popup-title">Mon WhatsApp perso 💌</div>
 
     <div class="pseudo-copy">
-      <div class="pseudo-badge" onclick="copyPseudo()">@Juliettexcx</div>
-      <div class="copy-hint">Appuie pour copier le pseudo</div>
-      <div class="copy-confirm" id="copy-confirm">✓ Copié ! Colle-le dans Telegram</div>
+      <div class="pseudo-badge" onclick="copyPseudo()">+33 6 44 69 14 78</div>
+      <div class="copy-hint">Appuie pour copier le numéro</div>
+      <div class="copy-confirm" id="copy-confirm">✓ Copié ! Colle-le dans WhatsApp</div>
     </div>
 
     <button class="popup-close" onclick="closePopup('perso')">Fermer</button>
@@ -402,14 +402,14 @@
   }
 
   function copyPseudo() {
-    navigator.clipboard.writeText('@Juliettexcx').then(() => {
+    navigator.clipboard.writeText('+33644691478').then(() => {
       const el = document.getElementById('copy-confirm');
       el.classList.add('show');
       setTimeout(() => el.classList.remove('show'), 2500);
     }).catch(() => {
       // fallback si clipboard non dispo
       const el = document.getElementById('copy-confirm');
-      el.textContent = '→ Tape @Juliettexcx dans Telegram';
+      el.textContent = '→ Ajoute +33 6 44 69 14 78 dans WhatsApp';
       el.classList.add('show');
     });
   }
