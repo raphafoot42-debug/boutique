@@ -1,5 +1,7 @@
 import Stripe from "stripe";
 
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -16,14 +18,13 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: "STRIPE_SECRET_KEY manquante côté serveur (Vercel > Settings > Environment Variables)." });
     }
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems.map((li) => ({ price: li.price, quantity: li.quantity })),
       client_reference_id: orderId,
       success_url: successUrl,
       cancel_url: cancelUrl,
+      managed_payments: { enabled: false },
     });
 
     return res.status(200).json({ url: session.url });
