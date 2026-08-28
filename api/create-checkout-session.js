@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ error: "Méthode non autorisée." });
-  }
+  } 
 
   try {
     const { lineItems, orderId, successUrl, cancelUrl } = req.body;
